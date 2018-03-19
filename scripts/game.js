@@ -1,3 +1,6 @@
+var numWins = 0;
+var numLosses = 0;
+
 function playRound(playerChoice, computerChoice) {
   if (playerChoice=='Rock') {
     if (computerChoice=='Paper') {
@@ -8,8 +11,10 @@ function playRound(playerChoice, computerChoice) {
       numWins += 1;
       document.getElementById('gameResult').innerHTML='You won.';
     }
+    else {
+      document.getElementById('gameResult').innerHTML="It's a tie. Play again.";
+    }
   }
-
   else if (playerChoice=='Paper') {
     if (computerChoice=='Scissors') {
       numLosses += 1;
@@ -19,8 +24,10 @@ function playRound(playerChoice, computerChoice) {
       numWins += 1;
       document.getElementById('gameResult').innerHTML='You won.';
     }
+    else {
+      document.getElementById('gameResult').innerHTML="It's a tie. Play again.";
+    }
   }
-
   else if (playerChoice=='Scissors') {
     if (computerChoice=='Rock') {
       numLosses += 1;
@@ -30,17 +37,23 @@ function playRound(playerChoice, computerChoice) {
       numWins += 1;
       document.getElementById('gameResult').innerHTML='You won.';
     }
+    else {
+      document.getElementById('gameResult').innerHTML="It's a tie. Play again.";
+    }
   }
-  else {
-    document.getElementById('gameResult').innerHTML="It's a tie. Play again";
-  }
+  setScores();
+}
+
+function setScores() {
+  document.getElementById('numWins').innerHTML=numWins;
+  document.getElementById('numLosses').innerHTML=numLosses;
 }
 
 function whoWon(numWins, numLosses){
-  if numWins>2 {
+  if (numWins>2) {
       document.getElementById('finalResult')='You won.';
   }
-  else if numLosses>2 {
+  else if (numLosses>2) {
       document.getElementById('finalResult')='Your opponent won.';
   }
 }
@@ -54,8 +67,8 @@ function computerChoice() {
 }
 
 function game() {
-  var numWins = 0;
-  var numLosses = 0;
+  numWins = 0;
+  numLosses = 0;
   console.log('start');
   var computerChoice = computerChoice();
   console.log(computerChoice);
