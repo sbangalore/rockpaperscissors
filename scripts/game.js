@@ -2,6 +2,8 @@ var numWins = 0;
 var numLosses = 0;
 
 function playRound(playerChoice, computerChoice) {
+  document.getElementById('choice').innerHTML='You chose ' + playerChoice.toLowerCase() + '.';
+  document.getElementById('computerChoice').innerHTML='Your opponent chose ' + computerChoice.toLowerCase() + '.';
   if (playerChoice=='Rock') {
     if (computerChoice=='Paper') {
       numLosses += 1;
@@ -42,6 +44,7 @@ function playRound(playerChoice, computerChoice) {
     }
   }
   setScores();
+  whoWon();
 }
 
 function setScores() {
@@ -49,17 +52,23 @@ function setScores() {
   document.getElementById('numLosses').innerHTML=numLosses;
 }
 
-function whoWon(numWins, numLosses){
+function whoWon(){
   if (numWins>2) {
-      document.getElementById('finalResult')='You won.';
+      document.getElementById('finalResult').innerHTML='You won.';
   }
   else if (numLosses>2) {
-      document.getElementById('finalResult')='Your opponent won.';
+      document.getElementById('finalResult').innerHTML='Your opponent won.';
   }
 }
 
 function restart() {
-
+  numWins = 0;
+  numLosses = 0;
+  setScores();
+  document.getElementById('finalResult').innerHTML='';
+  document.getElementById('choice').innerHTML='';
+  document.getElementById('computerChoice').innerHTML='';
+  document.getElementById('gameResult').innerHTML='';
 }
 
 function computerChoice() {
@@ -67,8 +76,6 @@ function computerChoice() {
 }
 
 function game() {
-  numWins = 0;
-  numLosses = 0;
   console.log('start');
   var computerChoice = computerChoice();
   console.log(computerChoice);
