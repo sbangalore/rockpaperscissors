@@ -1,24 +1,29 @@
 body {
   margin: 0;
   font-family: 'Open-sans', sans-serif;
+  text-align: center;
+  background-color: navy;
 }
 
 #upper {
-  background-color: navy;
   padding: 20px;
   padding-left: 10px;
   color: white;
+  border-bottom: black 2px solid;
 }
 
 #middle {
   background-color: white;
   padding: 20px;
   color: black;
+  border-bottom: black 2px solid;
 }
 
 #choiceButton {
   width: 50px;
   padding: 5px;
+  border: transparent;
+  background-color: transparent;
 }
 
 #choice {
@@ -26,13 +31,13 @@ body {
 }
 
 #lower {
-  background-color: navy;
   padding: 10px;
   color: white;
 }
 
 #lower > table {
   color: white;
+  margin: auto;
 }
 
 .resultCell {

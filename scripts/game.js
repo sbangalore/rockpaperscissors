@@ -61,5 +61,4 @@ function game() {
   console.log(computerChoice);
   var playerChoice = prompt();
   console.log(playRound(playerChoice, computerChoice));
-
 }
