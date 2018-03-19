@@ -74,11 +74,3 @@ function restart() {
 function computerChoice() {
   return ['Rock', 'Paper', 'Scissors'][Math.floor(Math.random()*3)];
 }
-
-function game() {
-  console.log('start');
-  var computerChoice = computerChoice();
-  console.log(computerChoice);
-  var playerChoice = prompt();
-  console.log(playRound(playerChoice, computerChoice));
-}
